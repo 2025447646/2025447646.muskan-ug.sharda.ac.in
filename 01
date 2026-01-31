@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+/* function to check palindrome*/
+int ispalidrome(char str[]) {
+  int i =0;
+  int j =strlen(str) - 1;
+  while(i<j) {
+    if (str[i] !=str[j])
+    return 0; //not palidrome
+    i++;
+    j--;
+  }
+  return 1;  //palindrome
+}
+int main() {
+  char str[100];
+  printf("enter a string :" );
+  // safer to use fgets intstead og gets
+  fgets(str, sizeof (str), stdin);
+  if(ispalindrome(str))
+      printf("string is palidrome");
+  else
+      printf("string is not palindrome");
+    return 0;
+}
